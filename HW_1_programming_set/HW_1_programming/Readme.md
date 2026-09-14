@@ -86,7 +86,7 @@ As you can see, the Y and Z maps have the same size as the input image I. For ea
 
 
 
-# Question 1:  (10 pts)
+# Question 1:  (20 pts)
 
 * Given the input image `I`, we have implemented the edge map  `Map_edge = find_edge(args, I)` and the surface `Map_surface = find_surface(args, I)` for you. A value of 1 means the corresponding pixel belongs to edges or surfaces, respectively.
   
