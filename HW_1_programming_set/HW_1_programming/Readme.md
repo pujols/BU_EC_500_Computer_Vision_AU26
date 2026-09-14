@@ -2,15 +2,15 @@
 
 ## Submission instructions
 
-* Due date and time: September 18th (Thursday) 2025, 23:59 ET
+* Due date and time: September 28th (Monday) 2026, 23:59 ET
 
-* Carmen submission: 
-Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
+* Submission: 
+Submit a .zip file named `username.zip` (e.g., `chao209.zip`) with the following files
   - your completed Python script `main.py`
   - your 6 generated figures `Map_background.png`, `Map_horizontal_edge.png`, `Map_vertical_edge.png`, `Map_contact_edge.png`, `3D_Y.png`, `3D_Z.png`
   - your 6 generated files `Results_Map_background.npz`, `Results_Map_horizontal_edge.npz`, `Results_Map_vertical_edge.npz`, `Results_Map_contact_edge.npz`, `Results_3D_Y.npz`, `Results_3D_Z.npz`.
 
-* Collaboration: You may discuss the homework with your classmates. However, you need to write your solutions, complete your .py files, and submit them by yourself. In your submission, you must list with whom you have discussed the homework. Please list each classmate’s name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `main.py`. That is, if you discussed your homework with two classmates, your .py file will have two rows at the end. Please consult the syllabus for what is and is not acceptable collaboration.
+* Collaboration: You may discuss the homework with your classmates. However, you must write your solutions, complete your .py files, and submit them yourself. In your submission, you must list with whom you have discussed the homework. Please list each classmate’s name and username (e.g., Wei-Lun Chao, chao209) as a row at the end of `main.py`. That is, if you discussed your homework with two classmates, your .py file will have two rows at the end. Please consult the syllabus for what is and is not acceptable collaboration.
 
 ## Implementation instructions
 
@@ -22,13 +22,13 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * You will see a folder `for_display`, which contains some images used for display here.
 
-* Please use python3 and write your solutions from scratch. (You must use python3.)
+* Please use Python 3 and write your solutions from scratch. (You must use Python 3.)
 
 * **Caution! Python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**
 
-* We note that the provided commands are designed to work with Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
+* We note that the provided commands are designed to work on Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
 
-* Caution! Please do not import packages (like scikit learn) that are not listed in the provided code. Follow the instructions in each question strictly to code up your solutions. Do not change the output format. Do not modify the code unless we instruct you to do so. (You are free to play with the code, but your submitted code should not contain those changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
+* Caution! Please do not import packages (like scikit-learn) that are not listed in the provided code. Follow the instructions in each question strictly to code up your solutions. Do not change the output format. Do not modify the code unless we instruct you to do so. (You are free to play with the code, but your submitted code should not contain changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
 
 ## Installation instructions
 
@@ -47,19 +47,19 @@ In this homework, you will implement a simplified version of the simple version 
 
 * Specifically, you are given the following gray-scale image I (a 2D matrix) captured by parallel projection with a viewing angle of theta = 45 degrees. White color means a pixel value of 1; Gray color means a pixel value of 0.5; black color means a pixel value of 0.0.
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/I.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/I.png)
 
-* Your goal is to derive the 3D locations of each pixel. Specifically, you are tasked to derive the 3D Y (height) map and 3D Z (depth) map for each pixel.
+* Your goal is to derive the 3D locations of each pixel. Specifically, you are tasked with deriving the 3D Y (height) map and 3D Z (depth) map for each pixel.
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/3D_Y.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/3D_Y.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/3D_Z.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/3D_Z.png)
 
 As you can see, the Y and Z maps have the same size as the input image I. For each pixel location, the input image I records its color or light intensity, while the Y and Z maps record their height and depth in 3D.
 
 # Notes before you start or while you are implementing
 
-1. In your implementation, you should not hardcode the edge locations by reading how we generate the image I in the data_loader function. Instead, you should write an algorithm that relies on 1) each edge pixel's 2D angle to determine whether it is a vertical edge or a horizontal edge; and 2) each pixel's vertically adjacent pixels to determine whether it is a contact edge or not. The definitions of these edge categories can be found in the lecture slides or the textbook. If you simply hardcode the locations, you will earn 0 points for the corresponding question. ===> The TA and I will generate a different image I to run your code. 
+1. In your implementation, you should not hardcode the edge locations by reading how we generate the image I in the data_loader function. Instead, you should write an algorithm that relies on 1) each edge pixel's 2D angle to determine whether it is a vertical edge or a horizontal edge; and 2) each pixel's vertically adjacent pixels to determine whether it is a contact edge or not. The definitions of these edge categories can be found in the lecture slides or the textbook. If you simply hardcode the locations, you will earn 0 points for the corresponding question. ===> The TA and I may generate a different image to run your code. 
 
 2. It is OK that you assume the background color, surface color, and edge colors are fixed. That is, you can set a pixel value threshold to determine which pixels belong to the background.
 
@@ -80,7 +80,7 @@ As you can see, the Y and Z maps have the same size as the input image I. For ea
 
 # Question 0: Get ready 
 
-* Please overview `main.py`. It contains multiple sub-functions. The outputs are certain maps like edge or background maps, which have the same size as the input image I.
+* Please go through `main.py`. It contains multiple sub-functions. The outputs are certain maps like edge or background maps, which have the same size as the input image I.
 
 * We note that a matrix and an image have different axis ordering and direction. In Python, for a matrix `I`,  `I[i, j]` means the i-th row (top-down) and j-th column (left-right). In this question, however, **please treat `I` and other maps directly as images. That is, given `I`,  `I[i, j]` means the color at the horizontal index i (left-right) and vertical index j (bottom-up). Namely, the color at the `(i, j)` pixel location.** Please note that i and j both start from 0.
 
@@ -90,7 +90,7 @@ As you can see, the Y and Z maps have the same size as the input image I. For ea
 
 * Given the input image `I`, we have implemented the edge map  `Map_edge = find_edge(args, I)` and the surface `Map_surface = find_surface(args, I)` for you. A value of 1 means the corresponding pixel belongs to edges or surfaces, respectively.
   
-* You are asked to complete the function `def find_background(args, I)`, which generate the background map. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `Map_background`: a value of 1 means the corresponding pixel belongs to the backgrounds. Please make sure that your results follow the required numpy array shapes. 
+* You are asked to complete the function `def find_background(args, I)`, which generate the background map. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `Map_background`: a value of 1 means the corresponding pixel belongs to the background. Please make sure that your results follow the required numpy array shapes. 
 
 * You may search **`#### Your job 1`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
@@ -104,7 +104,7 @@ This command will run your code. You will see the resulting `Map_background` dis
 
 * Your result should look like:
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_background.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_background.png)
 
 
 
@@ -128,11 +128,11 @@ This command will run your code. You will see the resulting `Map_horizontal_edge
 
 * Your result should look like:
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_horizontal_edge.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_horizontal_edge.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_vertical_edge.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_vertical_edge.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_contact_edge.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_1_programming_set/HW_1_programming/for_display/Map_contact_edge.png)
 
 
 
@@ -176,4 +176,4 @@ This command will run your code. You will see the resulting `3D_Z` displayed in 
 
 # What to submit:
 
-* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not be graded.
+* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named username.zip (e.g., chao209.zip). Failing to submit a single .zip file will not be graded.
