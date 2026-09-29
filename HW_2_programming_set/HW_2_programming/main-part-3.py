@@ -38,6 +38,12 @@ def main(args):
 
         fig, ax = plt.subplots()
         ax.imshow(np.transpose((I / 2 + 0.5), (1, 0)), cmap='gray', origin='lower', extent = [-((N - 1) / 2), ((N - 1) / 2), -((N - 1) / 2), ((N - 1) / 2)])
+        current_dir = os.getcwd()
+        plt.savefig(osp.join(current_dir, 'result', str(
+            args.current_step) + '_' + 'periodic_output.png'))
+        np.savez(osp.join(current_dir, 'result', str(
+            args.current_step) + '_' + 'Results_periodic_output.npz'),
+                 m=I)
         plt.show()
         plt.close(fig)
 

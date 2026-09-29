@@ -25,7 +25,7 @@ def data_loader(args):
         image_path = osp.join(current_dir, 'data', args.data + '.png')
         I = np.asarray(Image.open(image_path)).astype(np.float64)/255
         I = np.transpose(I, (1, 0, 2))
-        I = I[:, ::-1, :]
+        I = I[:, ::-1, :3]
 
     elif args.data == "rectangle":
         print("Using rectangle shape")
