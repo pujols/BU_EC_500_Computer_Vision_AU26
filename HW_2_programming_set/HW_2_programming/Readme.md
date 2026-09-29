@@ -346,7 +346,7 @@ This command will run your code. You will see a generated image displayed in the
 
 * Your result should look like
 
-![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/1_periodic_outpute.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/1_periodic_output.png)
 
 
 
