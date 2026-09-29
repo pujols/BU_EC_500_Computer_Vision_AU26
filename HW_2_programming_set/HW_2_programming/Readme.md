@@ -49,25 +49,32 @@ Submit a .zip file named `name.number.zip` (e.g., `chao209.zip`) with the follow
 # Part 1
 ***
 
+# Introduction
+
+* In this part, you will implement geometric transformations on images (textbook chapter 38; lectures 4 & 5). 
+
+* You are given several images in the `data` folder. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 and 1.0.
 
 
-
+***
+# Part 2
+***
 
 # Introduction
 
-* In this homework, you will implement convolution and one filter (a convolutional kernel) in Lectures 6 & 7 & 9 (textbook, chapters 15 & 17). 
+* In this homework, you will implement the convolution operation and one filter (a convolutional kernel) in lectures 5 & 6 & 7 (textbook, chapters 15 & 17). 
 
-* In this homework, you will implement down-sampling, up-sampling, the Gaussian pyramid, and the Laplacian pyramid introduced in the textbook chapter 23. 
+* In this homework, you will implement down-sampling, up-sampling, the Gaussian pyramid, and the Laplacian pyramid introduced in the textbook, chapter 23. 
 
-* You are given several images in the `data` folder, as well as the following toy image. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 to 1.0.
+* You are given several images in the `data` folder, as well as the following toy image. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 and 1.0.
 
 Rectangle: 
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/rectangle.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/rectangle.png)
 
 * The convoluted rectangle with an average (box) filter is as below:
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/Convolution_output_rectangle_average.png)
+![Alt text](github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Convolution_output_rectangle_average.png)
 
 
 
