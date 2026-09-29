@@ -45,6 +45,8 @@ Submit a .zip file named `name.number.zip` (e.g., `chao209.zip`) with the follow
   - for matplotlib: <br/>
     do `python3 -m pip install -U pip` and then `python3 -m pip install -U matplotlib`. If you are using the Windows command line, you may try `py -3 -mpip install -U pip` and then `py -3 -mpip install -U matplotlib`.
 
+
+
 ***
 # Part 1
 ***
@@ -54,6 +56,99 @@ Submit a .zip file named `name.number.zip` (e.g., `chao209.zip`) with the follow
 * In this part, you will implement geometric transformations on images (textbook chapter 38; lectures 4 & 5). 
 
 * You are given several images in the `data` folder. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 and 1.0.
+
+* For this question, please follow the instructions in `HW2-part-1.ppt` or `HW2-part-1.pdf`.
+
+
+
+# Question 0: Get ready 
+
+* Please read through `HW2-part-1.ppt` or `HW2-part-1.pdf`.
+
+* Please go through `main-part-1.py`. It contains multiple sub-functions. Specifically, you may want to take a look at `data_loader`, `matrix_to_list`, `forward_mapping`, `backward_mapping`, `transformation_mat_1`, and `transformation_mat_2`.
+
+* We note that a matrix and an image have different axis ordering and direction. In numPy, for a matrix `I`,  `I[i, j]` means the i-th row (top-down) and j-th column (left-right). In this homework, however, **please treat `I` and other matrices directly as images. That is, given `I`,  `I[i, j, :]` means the R, G, and B pixel values at the horizontal index i (left-right) and vertical index j (bottom-up). Namely, the color at the `(i, j)` pixel location.** Please note that i and j both start from 0.
+
+
+
+# Question 1: Represent an image by a list of points and their pixel colors (10 pts)
+
+* Go to the `main` function and find `if int(args.current_step) == 1:`
+
+* Given the input image `I`, you need to perform `matrix_to_list` to convert it into a list of points, saved in a NumPy array. 
+
+* Your job is to complete the implementation of the `matrix_to_list(args, I, display = False)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_list`. Please make sure that your results follow the required numpy array shapes.
+
+* You may search **`#### Your job 1`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+## Running and saving
+
+* Once completed, please run the following commands<br/>
+`python3 main-part-1.py --current_step 1 --data lighthouse`<br/>
+This command will run your code. You should see that the loaded input image and the generated point cloud look quite similar.
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/lighthouse.png)
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Point_cloud.png)
+ 
+
+
+# Questions 2 & 3: Generate transformation matrices (5 + 5 pts)
+
+* Go to the `main` function and find `if int(args.current_step) >= 2:` and read the corresponding code.
+
+* Your job is to complete the implementation of the `transformation_mat_1(args)` and `transformation_mat_1(args)` functions. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `transformation_mat`. Please make sure that your results follow the required numpy array shapes. 
+
+* You may search **`#### Your job 2`** and **`#### Your job 3`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
+
+
+
+# Question 4: Forward mapping (10 pts)
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/2_forward_mapping_output_lighthouse_2.png)
+
+* Go to the `main` function and find `if int(args.current_step) == 2:` and read the corresponding code.
+
+* Your job is to complete the implementation of the `forward_mapping(args, I, transformation_mat)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_out`. Please make sure that your results follow the required numpy array shapes. 
+
+* You may search **`#### Your job 4####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
+
+## Running and saving
+
+* Once completed, please run the following command<br/>
+`python3 main-part-1.py --current_step 2 --data lighthouse --display --save --mat_ID 1`<br/>
+`python3 main-part-1.py --current_step 2 --data lighthouse --display --save --mat_ID 2`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
+
+* The code will generate `2_Results_forward_mapping_output_lighthouse_1.npz`, `2_Results_forward_mapping_output_lighthouse_2.npz`, `2_forward_mapping_output_lighthouse_1.png`, and `2_forward_mapping_output_lighthouse_2.png`, which you will include in your submission.
+
+
+
+# Question 5: Backward mapping (10 pts)
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/2_backward_mapping_output_lighthouse_2.png)
+
+* Go to the `main` function and find `if int(args.current_step) == 3:` and read the corresponding code.
+
+* Your job is to complete the implementation of the `backward_mapping(args, I, transformation_mat)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_out`. Please make sure that your results follow the required numpy array shapes. 
+
+* You may search **`#### Your job 5####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
+
+## Running and saving
+
+* Once completed, please run the following command<br/>
+`python3 main-part-1.py --current_step 3 --data lighthouse --display --save --mat_ID 1`<br/>
+`python3 main-part-1.py --current_step 3 --data lighthouse --display --save --mat_ID 2`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
+
+* The code will generate `3_Results_forward_mapping_output_lighthouse_1.npz`, `3_Results_forward_mapping_output_lighthouse_2.npz`, `3_forward_mapping_output_lighthouse_1.png`, and `3_forward_mapping_output_lighthouse_2.png`, which you will include in your submission.
+
 
 
 ***
@@ -113,7 +208,7 @@ These commands will run your code. You will see several generated images and sev
  
 
 
-# Question 2: Downsampling (10 pts)
+# Question 2: Downsampling (5 pts)
 
 * Go to the `main` function and find `if int(args.current_step) >= 2:` and read the corresponding code.
 
@@ -151,7 +246,7 @@ This command will run your code. You will see several generated images and sever
 
 
 
-# Question 4: Upsampling (10 pts)
+# Question 4: Upsampling (5 pts)
 
 * Go to the `main` function and find `if int(args.current_step) >= 3:` and read the corresponding code.
 
