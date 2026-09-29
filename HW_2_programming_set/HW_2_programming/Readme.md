@@ -2,23 +2,23 @@
 
 ## Submission instructions
 
-* Due date and time: October 14th (Monday) 2025, 23:59 ET
+* Due date and time: October 14th (Wednesday) 2026, 23:59 ET
 
 * Carmen submission: 
-Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
-  - your completed Python script `main.py`
+Submit a .zip file named `username.zip` (e.g., `chao209.zip`) with the following files
+  - your completed Python script `main-part-1.py`, `main-part-2.py`, `main-part-3.py`
   - your generated figures in the .png format (please see each question for what needs to be submitted) 
   - your generated files in the .npz format (please see each question for what needs to be submitted)
 
-* Collaboration: You may discuss the homework with your classmates. However, you must write your solutions, complete your .py files, and submit them yourself. Collaboration in the sense that each of you completes some parts and then exchanges the solutions is NOT allowed. I do expect that your solutions won't be exactly the same. In your submission, you must list with whom you have discussed the homework. Please list each classmate's name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `main.py`. That is, if you discussed your homework with two classmates, your .py file will have two rows at the end. Please consult the syllabus for what is and is not acceptable collaboration.
+* Collaboration: You may discuss the homework with your classmates. However, you must write your solutions, complete your .py files, and submit them yourself. Collaboration in the sense that each of you completes some parts and then exchanges the solutions is NOT allowed. I do expect that your solutions won't be exactly the same. In your submission, you must list with whom you have discussed the homework. Please list each classmate's name and username (e.g., Wei-Lun Chao, chao209) as a row at the end of each `main.py`. That is, if you discussed your homework with two classmates, your .py file will have two rows at the end. Please consult the syllabus for what is and is not acceptable collaboration.
 
 ## Implementation instructions
 
 * Download or clone this repository.
 
-*  You will see a PPT and PDF named `HW2`, which provides useful information for the homework assignment.
+*  You will see a PPT and PDF named `HW2-part-1`, `HW2-part-2`, `HW2-part-3`, which provide useful information for the homework assignment.
 
-* You will see one Python script: `main.py`.
+* You will see three Python script3: `main-part-1.py`, `main-part-2.py`, `main-part-3.py`.
 
 * You will see a folder `for_display`, which contains some images used for display here.
 
@@ -26,15 +26,15 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * You will see a folder `result`, which will save the generated results.
 
-* Please use python3 and write your solutions from scratch. (You must use python3.)
+* Please use Python 3 and write your solutions from scratch. (You must use Python 3.)
 
 * **Caution! Python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**
 
-* We note that the provided commands are designed to work with Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
+* We note that the provided commands are designed to work on Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
 
-* **Caution! Please do not import packages (like scikit learn) that are not listed in the provided code. In this homework, you are not allowed to use numPy's or other Python libraries' built-in convolution, filter functions, down-sampling, up-sampling, Gaussian pyramid, and Laplacian pyramid functions. If you use them, you will get 0 points for the entire homework.** 
+* **Caution! Please do not import packages (like scikit-learn) that are not listed in the provided code. In this homework, you are not allowed to use numPy's or other Python libraries' built-in convolution, filter functions, down-sampling, up-sampling, Gaussian pyramid, and Laplacian pyramid functions. If you use them, you will get 0 points for the entire homework.** 
 
-* Caution! Follow the instructions in each question strictly to code up your solutions. **Do not change the output format. Do not modify the code unless we instruct you to do so.** (You are free to play with the code, but your submitted code should not contain those changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
+* Caution! Follow the instructions in each question strictly to code up your solutions. **Do not change the output format. Do not modify the code unless we instruct you to do so.** (You are free to play with the code, but your submitted code should not contain changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
 
 ## Installation instructions
 
@@ -47,27 +47,135 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 
 
+***
+# Part 1
+***
+
 # Introduction
 
-* In this homework, you will implement convolution and one filter (a convolutional kernel) in Lectures 6 & 7 & 9 (textbook, chapters 15 & 17). 
+* In this part, you will implement geometric transformations on images (textbook chapter 38; lectures 4 & 5). 
 
-* In this homework, you will implement down-sampling, up-sampling, the Gaussian pyramid, and the Laplacian pyramid introduced in the textbook chapter 23. 
+* You are given several images in the `data` folder. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 and 1.0.
 
-* You are given several images in the `data` folder, as well as the following toy image. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 to 1.0.
-
-Rectangle: 
-
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/rectangle.png)
-
-* The convoluted rectangle with an average (box) filter is as below:
-
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/Convolution_output_rectangle_average.png)
+* For this question, please follow the instructions in `HW2-part-1.ppt` or `HW2-part-1.pdf`.
 
 
 
 # Question 0: Get ready 
 
-* Please overview `main.py`. It contains multiple sub-functions. Specifically, you may want to take a look at `data_loader`, `load_kernel`, `Convolution`, `Downsampling`, `Upsampling`, `Gaussian_pyramid`, `Laplacian_pyramid`, and `Image_reconstruction`.
+* Please read through `HW2-part-1.ppt` or `HW2-part-1.pdf`.
+
+* Please go through `main-part-1.py`. It contains multiple sub-functions. Specifically, you may want to take a look at `data_loader`, `matrix_to_list`, `forward_mapping`, `backward_mapping`, `transformation_mat_1`, and `transformation_mat_2`.
+
+* We note that a matrix and an image have different axis ordering and direction. In numPy, for a matrix `I`,  `I[i, j]` means the i-th row (top-down) and j-th column (left-right). In this homework, however, **please treat `I` and other matrices directly as images. That is, given `I`,  `I[i, j, :]` means the R, G, and B pixel values at the horizontal index i (left-right) and vertical index j (bottom-up). Namely, the color at the `(i, j)` pixel location.** Please note that i and j both start from 0.
+
+
+
+# Question 1: Represent an image by a list of points and their pixel colors (10 pts)
+
+* Go to the `main` function and find `if int(args.current_step) == 1:`
+
+* Given the input image `I`, you need to perform `matrix_to_list` to convert it into a list of points, saved in a NumPy array. 
+
+* Your job is to complete the implementation of the `matrix_to_list(args, I, display = False)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_list`. Please make sure that your results follow the required numpy array shapes.
+
+* You may search **`#### Your job 1`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+## Running and saving
+
+* Once completed, please run the following commands<br/>
+`python3 main-part-1.py --current_step 1 --data lighthouse`<br/>
+This command will run your code. You should see that the loaded input image and the generated point cloud look quite similar.
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/lighthouse.png)
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Point_cloud.png)
+ 
+
+
+# Questions 2 & 3: Generate transformation matrices (5 + 5 pts)
+
+* Go to the `main` function and find `if int(args.current_step) >= 2:` and read the corresponding code.
+
+* Your job is to complete the implementation of the `transformation_mat_1(args)` and `transformation_mat_1(args)` functions. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `transformation_mat`. Please make sure that your results follow the required numpy array shapes. 
+
+* You may search **`#### Your job 2`** and **`#### Your job 3`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
+
+
+
+# Question 4: Forward mapping (10 pts)
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/2_forward_mapping_output_lighthouse_2.png)
+
+* Go to the `main` function and find `if int(args.current_step) == 2:` and read the corresponding code.
+
+* Your job is to complete the implementation of the `forward_mapping(args, I, transformation_mat)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_out`. Please make sure that your results follow the required numpy array shapes. 
+
+* You may search **`#### Your job 4####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
+
+## Running and saving
+
+* Once completed, please run the following command<br/>
+`python3 main-part-1.py --current_step 2 --data lighthouse --display --save --mat_ID 1`<br/>
+`python3 main-part-1.py --current_step 2 --data lighthouse --display --save --mat_ID 2`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
+
+* The code will generate `2_Results_forward_mapping_output_lighthouse_1.npz`, `2_Results_forward_mapping_output_lighthouse_2.npz`, `2_forward_mapping_output_lighthouse_1.png`, and `2_forward_mapping_output_lighthouse_2.png`, which you will include in your submission.
+
+
+
+# Question 5: Backward mapping (10 pts)
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/3_backward_mapping_output_lighthouse_2.png)
+
+* Go to the `main` function and find `if int(args.current_step) == 3:` and read the corresponding code.
+
+* Your job is to complete the implementation of the `backward_mapping(args, I, transformation_mat)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_out`. Please make sure that your results follow the required numpy array shapes. 
+
+* You may search **`#### Your job 5####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
+
+## Running and saving
+
+* Once completed, please run the following command<br/>
+`python3 main-part-1.py --current_step 3 --data lighthouse --display --save --mat_ID 1`<br/>
+`python3 main-part-1.py --current_step 3 --data lighthouse --display --save --mat_ID 2`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
+
+* The code will generate `3_Results_forward_mapping_output_lighthouse_1.npz`, `3_Results_forward_mapping_output_lighthouse_2.npz`, `3_forward_mapping_output_lighthouse_1.png`, and `3_forward_mapping_output_lighthouse_2.png`, which you will include in your submission.
+
+
+
+***
+# Part 2
+***
+
+# Introduction
+
+* In this homework, you will implement the convolution operation and one filter (a convolutional kernel) in lectures 5 & 6 & 7 (textbook, chapters 15 & 17). 
+
+* In this homework, you will implement down-sampling, up-sampling, the Gaussian pyramid, and the Laplacian pyramid introduced in the textbook, chapter 23. 
+
+* You are given several images in the `data` folder, as well as the following toy image. All of them have three color channels (red, green, and blue). The pixel values are between 0.0 and 1.0.
+
+Rectangle: 
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/rectangle.png)
+
+* The convoluted rectangle with an average (box) filter is as below:
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Convolution_output_rectangle_average.png)
+
+
+
+# Question 0: Get ready 
+
+* Please go through `main-part-2.py`. It contains multiple sub-functions. Specifically, you may want to take a look at `data_loader`, `load_kernel`, `Convolution`, `Downsampling`, `Upsampling`, `Gaussian_pyramid`, `Laplacian_pyramid`, and `Image_reconstruction`.
 
 * We note that a matrix and an image have different axis ordering and direction. In numPy, for a matrix `I`,  `I[i, j]` means the i-th row (top-down) and j-th column (left-right). In this homework, however, **please treat `I` and other matrices directly as images. That is, given `I`,  `I[i, j, :]` means the R, G, and B pixel values at the horizontal index i (left-right) and vertical index j (bottom-up). Namely, the color at the `(i, j)` pixel location.** Please note that i and j both start from 0.
 
@@ -77,7 +185,7 @@ Rectangle:
 
 * Go to the `main` function and find `if int(args.current_step) == 1:`
 
-* Given the input image `I`, you need to perform convolution of it using `kernel`. 
+* Given the input image `I`, you need to perform convolution on it using `kernel`. 
 
 * We have implemented one kernel in the `load_kernel(args)` function.
 
@@ -85,38 +193,38 @@ Rectangle:
 
 * You may search **`#### Your job 1.0`**, **`#### Your job 1.1`**, **`#### Your job 1.2`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
-* Caution! For this question, please follow the formula in `HW2.ppt` or `HW2.pdf`.
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
 
 ## Running and saving
 
 * Once completed, please run the following commands<br/>
-`python3 main.py --current_step 1 --data rectangle --kernel average --display --save`<br/>
-`python3 main.py --current_step 1 --data dreese --kernel binomial --display --save`<br/>
-These commands will run your code. You will see several generated images, and several texts displayed in command lines. 
+`python3 main-part-2.py --current_step 1 --data rectangle --kernel average --display --save`<br/>
+`python3 main-part-2.py --current_step 1 --data cds --kernel binomial --display --save`<br/>
+These commands will run your code. You will see several generated images and several texts displayed in the command line. 
 
-* The code will generate `1_Convolution_output_rectangle_average.png`, `1_Convolution_output_dreese_binomial.png`, `1_Results_Convolution_output_dreese_binomial.npz`, and `1_Results_Convolution_output_rectangle_average.npz`, which you will include in your submission.
+* The code will generate `1_Convolution_output_rectangle_average.png`, `1_Convolution_output_cds_binomial.png`, `1_Results_Convolution_output_cds_binomial.npz`, and `1_Results_Convolution_output_rectangle_average.npz`, which you will include in your submission.
  
-* **Running the code should only take several seconds. If it runs more than 20 seconds, you will get a 30% reduction for Questions 1.** 
+* **Running the code should only take several seconds. If it runs for more than 30 seconds, you will get a 30% reduction for Question 1.** 
  
 
 
-# Question 2: Downsampling (10 pts)
+# Question 2: Downsampling (5 pts)
 
 * Go to the `main` function and find `if int(args.current_step) >= 2:` and read the corresponding code.
 
-* We will use your implemented 2D binomial kernel in the `load_kernel(args)` function.
+* You will use your implemented 2D binomial kernel in the `load_kernel(args)` function.
 
 * Your job is to complete the implementation of the `Downsampling(args, I, kernel)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I_out`. Please make sure that your results follow the required numpy array shapes. 
 
 * You may search **`#### Your job 2 starts here: downsampling ####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
-* Caution! For this question, please follow the formula in `HW2.ppt` or `HW2.pdf`.
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
 
 
 
 # Question 3: Gaussian pyramid (10 pts)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/Down_sampled.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Down_sampled.png)
 
 * Go to the `main` function and find `if int(args.current_step) >= 2:` and read the corresponding code.
 
@@ -124,21 +232,21 @@ These commands will run your code. You will see several generated images, and se
 
 * You may search **`#### Your job 3 starts here: create the n-th downsampled image ####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
-* Caution! For this question, please follow the formula in `HW2.ppt` or `HW2.pdf`.
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
 
 ## Running and saving
 
 * Once completed, please run the following command<br/>
-`python3 main.py --current_step 2 --data lighthouse --display --save`<br/>
-These commands will run your code. You will see several generated images, and several texts displayed in command lines. 
+`python3 main-part-2.py --current_step 2 --data lighthouse --display --save`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
 
 * The code will generate `Downsampled_lighthouse_scale_0.npz`, `Downsampled_lighthouse_scale_1.npz`, `Downsampled_lighthouse_scale_2.npz`, `Downsampled_lighthouse_scale_3.npz`, and `Downsampled_lighthouse.png`, which you will include in your submission.
 
-* **Running the code should only take several seconds. If it runs more than 20 seconds, you will get a 30% reduction for Questions 2 and 3.** 
+* **Running the code should only take several seconds. If it runs for more than 20 seconds, you will get a 30% reduction for Questions 2 and 3.** 
 
 
 
-# Question 4: Upsampling (10 pts)
+# Question 4: Upsampling (5 pts)
 
 * Go to the `main` function and find `if int(args.current_step) >= 3:` and read the corresponding code.
 
@@ -146,13 +254,13 @@ These commands will run your code. You will see several generated images, and se
 
 * You may search **`#### Your job 4 starts here: upsampling ####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
-* Caution! For this question, please follow the formula in `HW2.ppt` or `HW2.pdf`.
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
 
 
 
 # Question 5: Laplacian pyramid (10 pts)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/Up_sampled.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Up_sampled.png)
 
 * Go to the `main` function and find `if int(args.current_step) >= 3:` and read the corresponding code.
 
@@ -160,23 +268,23 @@ These commands will run your code. You will see several generated images, and se
 
 * You may search **`#### Your job 5 starts here: create the n-th residual image ####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
-* Caution! For this question, please follow the formula in `HW2.ppt` or `HW2.pdf`.
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
   
 ## Running and saving
 
 * Once completed, please run the following command<br/>
-`python3 main.py --current_step 3 --data lighthouse --display --save`<br/>
-These commands will run your code. You will see several generated images, and several texts displayed in command lines. 
+`python3 main-part-2.py --current_step 3 --data lighthouse --display --save`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
 
 * The code will generate `Residual_lighthouse_scale_0.npz`, `Residual_lighthouse_scale_1.npz`, `Residual_lighthouse_scale_2.npz`, and `Residual_lighthouse.png`, which you will include in your submission.
 
-* **Running the code should only take several seconds. If it runs more than 40 seconds, you will get a 30% reduction for Questions 4 and 5.** 
+* **Running the code should only take several seconds. If it runs for more than 40 seconds, you will get a 30% reduction for Questions 4 and 5.** 
 
 
 
 # Question 6: Image reconstruction (10 pts)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5524_2025AU/blob/main/HW_2_programming_set/HW_2_programming/for_display/Reconstruct.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/Reconstruct.png)
 
 * Go to the `main` function and find `if int(args.current_step) >= 4:` and read the corresponding code.
 
@@ -184,20 +292,82 @@ These commands will run your code. You will see several generated images, and se
 
 * You may search **`#### Your job 6 starts here: reconstruct the original image ####`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
 
-* Caution! For this question, please follow the formula in `HW2.ppt` or `HW2.pdf`.
+* Caution! For this question, please follow the formula in `HW2-part-2.ppt` or `HW2-part-2.pdf`.
 
 ## Running and saving
 
 * Once completed, please run the following command<br/>
-`python3 main.py --current_step 4 --data lighthouse --display --save`<br/>
-These commands will run your code. You will see several generated images, and several texts displayed in command lines. 
+`python3 main-part-2.py --current_step 4 --data lighthouse --display --save`<br/>
+This command will run your code. You will see several generated images and several texts displayed in the command line. 
 
 * The code will generate `Reconstruct_lighthouse.npz` and `Reconstruct_lighthouse.png`, which you will include in your submission.
   
-* **Running the code should only take several seconds. If it runs more than 60 seconds, you will get a 30% reduction for Question 6.**
+* **Running the code should only take several seconds. If it runs for more than 60 seconds, you will get a 30% reduction for Question 6.**
 
-  
 
+
+***
+# Part 3
+***
+
+# Introduction
+
+* In this part, you will experience periodic images (textbook chapter 16; lecture 6). 
+
+* For this question, please follow the instructions in `HW2-part-3.ppt` or `HW2-part-3.pdf`.
+
+
+
+# Question 0: Get ready 
+
+* Please read through `HW2-part-3.ppt` or `HW2-part-3.pdf`.
+
+* Please go through `main-part-3.py`. It contains two sub-functions, `main` and `Periodic_basis`.
+
+
+
+# Question 1: Creating periodic images (10 pts)
+
+* Go to the `main` function and find `if int(args.current_step) == 1:`
+
+* Given a particular frequency, you will use `Periodic_basis` to generate a periodic image `I`.
+
+* Your job is to complete the implementation of the `Periodic_basis(args, N, u_freq, v_freq, phase)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I`. Please make sure that your results follow the required numpy array shapes.
+
+* You may search **`#### Your job 1`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+## Running and saving
+
+* Once completed, please run the following commands<br/>
+`python3 main-part-3.py --current_step 1`<br/>
+This command will run your code. You will see a generated image displayed in the command line. 
+
+* The code will generate `1_Results_periodic_output.npz` and `1_periodic_outpute.png`, which you will include in your submission.
+
+* Your result should look like
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/1_periodic_outpute.png)
+
+
+
+# Question 2: Other experiments (0 pts)
+
+* Go to the `main` function and find `if int(args.current_step) == 2:`, `if int(args.current_step) == 3:`, `if int(args.current_step) == 4:`, and read and understand the code
+
+## Running and saving
+
+* Once completed, please run the following commands<br/>
+`python3 main-part-3.py --current_step 2`<br/>
+`python3 main-part-3.py --current_step 3`<br/>
+`python3 main-part-3.py --current_step 4`<br/>
+This command will run your code. You will see several generated images displayed in the command line.  
+
+* Please think about the differences among the generated images.
+
+
+
+***
 # What to submit:
+***
 
-* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not be graded.
+* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named username.zip (e.g., chao209.zip). Failing to submit a single .zip file will not be graded.
