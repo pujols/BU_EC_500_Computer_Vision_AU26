@@ -5,7 +5,7 @@
 * Due date and time: October 14th (Wednesday) 2026, 23:59 ET
 
 * Carmen submission: 
-Submit a .zip file named `name.number.zip` (e.g., `chao209.zip`) with the following files
+Submit a .zip file named `username.zip` (e.g., `chao209.zip`) with the following files
   - your completed Python script `main-part-1.py`, `main-part-2.py`, `main-part-3.py`
   - your generated figures in the .png format (please see each question for what needs to be submitted) 
   - your generated files in the .npz format (please see each question for what needs to be submitted)
@@ -130,7 +130,7 @@ This command will run your code. You will see several generated images and sever
 
 # Question 5: Backward mapping (10 pts)
 
-![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/2_backward_mapping_output_lighthouse_2.png)
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/3_backward_mapping_output_lighthouse_2.png)
 
 * Go to the `main` function and find `if int(args.current_step) == 3:` and read the corresponding code.
 
@@ -304,8 +304,70 @@ This command will run your code. You will see several generated images and sever
   
 * **Running the code should only take several seconds. If it runs for more than 60 seconds, you will get a 30% reduction for Question 6.**
 
-  
 
+
+***
+# Part 3
+***
+
+# Introduction
+
+* In this part, you will experience periodic images (textbook chapter 16; lecture 6). 
+
+* For this question, please follow the instructions in `HW2-part-3.ppt` or `HW2-part-3.pdf`.
+
+
+
+# Question 0: Get ready 
+
+* Please read through `HW2-part-3.ppt` or `HW2-part-3.pdf`.
+
+* Please go through `main-part-3.py`. It contains two sub-functions, `main` and `Periodic_basis`.
+
+
+
+# Question 1: Creating periodic images (10 pts)
+
+* Go to the `main` function and find `if int(args.current_step) == 1:`
+
+* Given a particular frequency, you will use `Periodic_basis` to generate a periodic image `I`.
+
+* Your job is to complete the implementation of the `Periodic_basis(args, N, u_freq, v_freq, phase)` function. Please go to the function and carefully read the input, output, and instructions. You can assume that the actual inputs will follow the input format, and your goal is to generate the output numpy array `I`. Please make sure that your results follow the required numpy array shapes.
+
+* You may search **`#### Your job 1`** to locate where to amend your implementation. You will see some instructions there. You are free to create more space in between.
+
+## Running and saving
+
+* Once completed, please run the following commands<br/>
+`python3 main-part-3.py --current_step 1`<br/>
+This command will run your code. You will see a generated image displayed in the command line. 
+
+* The code will generate `1_Results_periodic_output.npz` and `1_periodic_outpute.png`, which you will include in your submission.
+
+* Your result should look like
+
+![Alt text](https://github.com/pujols/BU_EC_500_Computer_Vision_AU26/blob/main/HW_2_programming_set/HW_2_programming/for_display/1_periodic_outpute.png)
+
+
+
+# Question 2: Other experiments (0 pts)
+
+* Go to the `main` function and find `if int(args.current_step) == 2:`, `if int(args.current_step) == 3:`, `if int(args.current_step) == 4:`, and read and understand the code
+
+## Running and saving
+
+* Once completed, please run the following commands<br/>
+`python3 main-part-3.py --current_step 2`<br/>
+`python3 main-part-3.py --current_step 3`<br/>
+`python3 main-part-3.py --current_step 4`<br/>
+This command will run your code. You will see several generated images displayed in the command line.  
+
+* Please think about the differences among the generated images.
+
+
+
+***
 # What to submit:
+***
 
-* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not be graded.
+* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named username.zip (e.g., chao209.zip). Failing to submit a single .zip file will not be graded.
