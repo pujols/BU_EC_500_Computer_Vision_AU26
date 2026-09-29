@@ -2,23 +2,23 @@
 
 ## Submission instructions
 
-* Due date and time: October 14th (Monday) 2025, 23:59 ET
+* Due date and time: October 14th (Wednesday) 2026, 23:59 ET
 
 * Carmen submission: 
-Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
-  - your completed Python script `main.py`
+Submit a .zip file named `name.number.zip` (e.g., `chao209.zip`) with the following files
+  - your completed Python script `main-part-1.py`, `main-part-2.py`, `main-part-3.py`
   - your generated figures in the .png format (please see each question for what needs to be submitted) 
   - your generated files in the .npz format (please see each question for what needs to be submitted)
 
-* Collaboration: You may discuss the homework with your classmates. However, you must write your solutions, complete your .py files, and submit them yourself. Collaboration in the sense that each of you completes some parts and then exchanges the solutions is NOT allowed. I do expect that your solutions won't be exactly the same. In your submission, you must list with whom you have discussed the homework. Please list each classmate's name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `main.py`. That is, if you discussed your homework with two classmates, your .py file will have two rows at the end. Please consult the syllabus for what is and is not acceptable collaboration.
+* Collaboration: You may discuss the homework with your classmates. However, you must write your solutions, complete your .py files, and submit them yourself. Collaboration in the sense that each of you completes some parts and then exchanges the solutions is NOT allowed. I do expect that your solutions won't be exactly the same. In your submission, you must list with whom you have discussed the homework. Please list each classmate's name and username (e.g., Wei-Lun Chao, chao209) as a row at the end of each `main.py`. That is, if you discussed your homework with two classmates, your .py file will have two rows at the end. Please consult the syllabus for what is and is not acceptable collaboration.
 
 ## Implementation instructions
 
 * Download or clone this repository.
 
-*  You will see a PPT and PDF named `HW2`, which provides useful information for the homework assignment.
+*  You will see a PPT and PDF named `HW2-part-1`, `HW2-part-2`, `HW2-part-3`, which provide useful information for the homework assignment.
 
-* You will see one Python script: `main.py`.
+* You will see three Python script3: `main-part-1.py`, `main-part-2.py`, `main-part-3.py`.
 
 * You will see a folder `for_display`, which contains some images used for display here.
 
@@ -26,15 +26,15 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * You will see a folder `result`, which will save the generated results.
 
-* Please use python3 and write your solutions from scratch. (You must use python3.)
+* Please use Python 3 and write your solutions from scratch. (You must use Python 3.)
 
 * **Caution! Python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**
 
-* We note that the provided commands are designed to work with Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
+* We note that the provided commands are designed to work on Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
 
-* **Caution! Please do not import packages (like scikit learn) that are not listed in the provided code. In this homework, you are not allowed to use numPy's or other Python libraries' built-in convolution, filter functions, down-sampling, up-sampling, Gaussian pyramid, and Laplacian pyramid functions. If you use them, you will get 0 points for the entire homework.** 
+* **Caution! Please do not import packages (like scikit-learn) that are not listed in the provided code. In this homework, you are not allowed to use numPy's or other Python libraries' built-in convolution, filter functions, down-sampling, up-sampling, Gaussian pyramid, and Laplacian pyramid functions. If you use them, you will get 0 points for the entire homework.** 
 
-* Caution! Follow the instructions in each question strictly to code up your solutions. **Do not change the output format. Do not modify the code unless we instruct you to do so.** (You are free to play with the code, but your submitted code should not contain those changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
+* Caution! Follow the instructions in each question strictly to code up your solutions. **Do not change the output format. Do not modify the code unless we instruct you to do so.** (You are free to play with the code, but your submitted code should not contain changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
 
 ## Installation instructions
 
@@ -44,6 +44,12 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
   - for matplotlib: <br/>
     do `python3 -m pip install -U pip` and then `python3 -m pip install -U matplotlib`. If you are using the Windows command line, you may try `py -3 -mpip install -U pip` and then `py -3 -mpip install -U matplotlib`.
+
+***
+# Part 1
+***
+
+
 
 
 
