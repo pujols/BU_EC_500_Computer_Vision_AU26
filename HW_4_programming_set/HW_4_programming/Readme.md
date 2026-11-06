@@ -48,7 +48,7 @@ Your `.zip` file **must contain** the following:
 > 🚨 **IMPORTANT:**  
 > All jobs should run in **reasonable time** — ideally **less than 5 minutes per job**.
 > Missing **any** of the required files (`main.py`, outputs in `result/`, or `report.pdf`) will result in a **grade penalty**.  
-> You need to save images for the **tasks 2, 4, and 5 by yourself** in the result folder and submit them. Create a folder per task in the result and put images for each task in it.  
+> You need to save images for **tasks 2, 4, and 5 by yourself** in the result folder and submit them. Create a folder per task in the result and put images for each task in it.  
 > There is a unit test file, `test_rpn_utils.py,` which you can run to determine if your code is correct. The unit test is not complete, so there is a chance that by passing all the tests, you still have some problems, but it is helpful. Read more about it at the end of this document.
 
 ---
@@ -67,8 +67,8 @@ You may **discuss** the homework with your classmates, but:
 At the **end of your `main.py`**, include a list of classmates you discussed the homework with, in this format (one per line):
 
 ```
-# Wei-Lun Chao, chao.209
-# Jane Doe, doe.123
+# Wei-Lun Chao, chao209
+# Jane Doe, doe123
 ```
 Refer to the syllabus for complete academic integrity guidelines.
 
@@ -99,7 +99,7 @@ The patch size is a "variable." The TA and I can take your completed code, chang
 
 In your implementation, please do not change anything beyond what you are instructed to do. Where you should implement/change is mostly within the "your job" portions. 
 
-The report.pdf is only about question 6. Please see the question details at the end of the HW4.ppt or HW4.pdf. 
+The report.pdf is only about question 6. Please see the question details at the end of HW4.ppt or HW4.pdf. 
 
 
 
@@ -137,7 +137,7 @@ Generate patch-level ground truth tensors from annotated images to simulate the 
 - `1_Existence_tensor_<image_name>.npz`
 - `1_Location_tensor_<image_name>.npz`
 
-There are six images, and each of them will create two files; then, you need to submit 12 files, which will automatically save in the result if you put `--save` in your command while running the code.
+There are six images, and each of them will create two files; then, you need to submit 12 files, which will be automatically saved in the result if you put `--save` in your command while running the code.
 
 ### Visualization (Optional):
 - Overlay GT boxes on the resized image with patch boundaries.
@@ -156,7 +156,7 @@ Convert the existence and location tensors back into bounding box proposals for 
 - Please see `main` after `args.job_number == 2:`, `decode_tensors` function.
 
 ### Where to implement:
-- Please fill `decode_tensors` function.
+- Please fill in the `decode_tensors` function.
 
 ### Tasks:
 - Iterate over each grid cell.
@@ -284,7 +284,7 @@ Decode anchor-based existence and location tensors back into bounding box propos
 - Please see `main` after `args.job_number == 4:`, `decode_anchor_grid_predictions` function.
 
 ### Where to implement:
-- Please fill `decode_anchor_grid_predictions` function.
+- Please fill in the `decode_anchor_grid_predictions` function.
 
 
 ### Tasks:
@@ -294,7 +294,7 @@ Decode anchor-based existence and location tensors back into bounding box propos
    - If `Existence[row, col, 0] > threshold`, decode the box:
      - Compute the anchor center.
      - Apply offsets to anchor to get `[x_center, y_center, width, height]`.
-     - Scale decoded box from resized image (200x200) to original image size.
+     - Scale the decoded box from the resized image (200x200) to the original image size.
 
 ### Output:
 - A list of predicted boxes per image across all anchors with confidence scores.
@@ -302,7 +302,7 @@ Decode anchor-based existence and location tensors back into bounding box propos
 
 
 ### Visualization (Optional):
-- Display original image with all decoded proposals drawn in blue and labeled with confidence scores.
+- Display the original image with all decoded proposals drawn in blue and labeled with confidence scores.
 
 ### Command Example:
 ```bash
@@ -330,7 +330,7 @@ Improve the quality of decoded bounding boxes by applying Non-Maximum Suppressio
 - Please see `main` after `args.job_number == 5:`, `non_max_suppression` function.
 
 ### Where to implement:
-- Please fill `non_max_suppression` function.
+- Please fill in the `non_max_suppression` function.
 
 
 ### Tasks:
@@ -340,7 +340,7 @@ Improve the quality of decoded bounding boxes by applying Non-Maximum Suppressio
 2. Apply Non-Maximum Suppression:
    - Sort boxes by confidence score.
    - Iteratively keep the highest-confidence box and remove others with IoU > threshold.
-   - Final result is a non-overlapping set of high-confidence proposals.
+   - The final result is a non-overlapping set of high-confidence proposals.
 
 ### Output:
 - A filtered list of bounding boxes per image with minimal overlap.
