@@ -3,8 +3,8 @@
 
 ## Submission instructions
 
-* **Due date and time:** 12/09/2025 (midnight)
-* **Carmen submission:**
+* **Due date and time:** 12/10/2026 (midnight)
+* **Gradescope submission:**
   Submit a `.zip` file named `name.number.zip` (e.g., `chao.209.zip`) with the following:
 
   - your completed Python script `main.py`
@@ -22,8 +22,7 @@
 
   ```python
   # Discussion:
-  # Wei-Lun Chao, chao.209
-  # Ada Lovelace, lovelace.1
+  # Wei-Lun Chao, chao209
   ```
 
   Please consult the syllabus for the detailed collaboration policy.
@@ -203,10 +202,10 @@ In this question, you will implement the dataset class, dataloader, autoencoder,
    Hints/constraints:
 
    * Use multiple (convolutional layers + BatchNorm + ReLU) for the encoder.
-     * for the convolutions, use kernel size 3, stride 2, padding 1 to downsample by a factor of 2 at each layer.
+     * For the convolutions, use kernel size 3, stride 2, padding 1 to downsample by a factor of 2 at each layer.
    * Use (transpose convolutions + BatchNorm + ReLU) for the decoder to recover the input size.
-     * for the transfose convolutions, use kernel size 4, stride 2, padding 1 to upsample by a factor of 2 at each layer.
-     * in the last layer, instead of using BatchNorm + ReLU, use a `Sigmoid` activation to ensure output pixel values are in [0, 1].
+     * For the transpose convolutions, use kernel size 4, stride 2, padding 1 to upsample by a factor of 2 at each layer.
+     * In the last layer, instead of using BatchNorm + ReLU, use a `Sigmoid` activation to ensure output pixel values are in [0, 1].
    * The provided `enc_channels` and `dec_channels` lists specify the number of channels at each stage.
    * `encode(x, return_intermediate=True)` should return the final latent tensor and a list of intermediate activations (one per encoder layer), which will be used later in Q3.
 
@@ -281,7 +280,7 @@ In this question, you will use the trained autoencoder as a feature extractor an
    Requirements:
 
    * Calculate the distance between all the data points between `query_embeddings` and `ref_embeddings `.
-   * For the distance, please use cosine distance, that is, pre-normalize each vector to have its L2 norm equal to 1, and compute the L2 distance
+   * For the distance, please use cosine distance; that is, pre-normalize each vector to have its L2 norm equal to 1, and compute the L2 distance
    * For each query, find its nearest neighbors' indices `nn_indices` in the reference embeddings using the `dist` you calculated in the previous step.
    
    <img src="AE_NN_viz.png" width="300" alt="Autoencoder Neural Network Visualization">
@@ -330,7 +329,7 @@ python3 main.py     --job_number 3     --data-dir data_folder     --test-data-di
 This will:
 
 - Load `ae_runs/autoencoder.pt`
-- Collect embeddings on a subset of train images and on the test images
+- Collect embeddings on a subset of training images and on the test images
 - Compute 1-NN color and shape accuracy for each layer
 - Save:
   - `ae_runs/layerwise_nn_acc.png`
